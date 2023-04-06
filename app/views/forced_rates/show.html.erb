@@ -1,0 +1,34 @@
+<div class="admin-container">
+  <h2 class="admin-title">Админская панель</h2>
+
+  <%= render partial: 'form', locals: {forced_rates: @forced_rates, forced_rate: @forced_rate} %>
+
+  <div class="admin-history">
+    <h3 class="history-title">История форсирования курса</h3>
+  
+    <% if @forced_rates.any? %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Время создания</th>
+            <th>Время форсирования</th>
+            <th>Курс</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @forced_rates.each do |forced_rate| %>
+            <tr>
+              <td><%= forced_rate.created_at.strftime("%d.%m.%Y") %></td>
+              <td><%= forced_rate.created_at.strftime("%H:%M:%S") %></td>
+              <td><%= forced_rate.until_time.strftime("%H:%M:%S %d.%m.%Y") %></td>
+              <td><%= number_to_currency(forced_rate.rate) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p class="history-empty">История форсирования пуста</p>
+    <% end %>
+  </div>
+</div>

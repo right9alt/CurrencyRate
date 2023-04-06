@@ -1,0 +1,13 @@
+:concurrency: 5
+:queues:
+  - default
+:pidfile: tmp/pids/sidekiq.pid
+:logfile: ./log/sidekiq.log
+
+production:
+  :concurrency: 10
+
+:schedule:
+  update_exchange_rate:
+    cron: "*/15 * * * * *"
+    class: "UpdateRateWorker"
