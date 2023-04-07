@@ -20,6 +20,11 @@ gem "importmap-rails"
 gem 'bootstrap', '~> 5.0'
 gem 'sassc-rails'
 gem 'sass-rails'
+
+gem 'rspec-rails'
+gem 'rails-controller-testing'
+gem 'factory_bot_rails' 
+gem 'webmock'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 gem 'actioncable'

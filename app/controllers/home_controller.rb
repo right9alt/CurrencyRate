@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     if ForcedRate.last&.archive == false
       @usd_rate = ForcedRate.last.rate
     else
-      @usd_rate = Rate.last.rate
+      @usd_rate = Rate.last&.rate
     end
   end
 end
