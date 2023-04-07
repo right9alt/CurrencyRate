@@ -107,6 +107,7 @@ GEM
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
     ffi (1.15.5)
+    foreman (0.87.2)
     fugit (1.8.1)
       et-orbi (~> 1, >= 1.2.7)
       raabro (~> 1.4)
@@ -294,6 +295,7 @@ DEPENDENCIES
   capybara
   debug
   factory_bot_rails
+  foreman
   httpparty
   importmap-rails
   jbuilder
